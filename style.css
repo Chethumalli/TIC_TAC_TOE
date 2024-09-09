@@ -1,188 +1,131 @@
+/* FIRST PAGE */
+
 *{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-.container span{
-    font-size: 70px;
-    font-family: 'Archivo Black', sans-serif;
-    
-}
-
-/* .container{
-    background-image: url("https://mcdn.wallpapersafari.com/medium/67/15/nI6VPO.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    backdrop-filter: blur(100px);
-} */
-.container::before {
-    content: "";
-    background-image: url("https://mcdn.wallpapersafari.com/medium/67/15/nI6VPO.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(2px); /* Adjust the blur value as needed */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-
-:root {
-    --cell--size:100px;
-    --mark--size : calc(var(--cell--size) * .9);
-}
 
 body{
-    margin: 0;
+    background-image: url("https://i.pinimg.com/originals/ce/6f/7f/ce6f7ffd885e477efa2110437ab779dd.gif");
     text-align: center;
-    color: #fff;
-}
-.board {
-    width: 100vw;
-    height: 90vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: repeat(3, auto);
-    justify-items: center;
-    align-items: center;
-
+    font-family: 'roboto';
+    overflow: hidden;
 }
 
-.cell {
-    width: var(--cell--size);
-    height: var(--cell--size);
-    border: 3px #D3A807 solid;
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-}
-
-.board :first-child,
-.board :nth-child(2) ,
-.board :nth-child(3) {
-    border-top: none;
-}
-
-.board :first-child,
-.board :nth-child(4) ,
-.board :nth-child(7) {
-    border-left: none;
-}
-
-.board :nth-child(7),
-.board :nth-child(8) ,
-.board :nth-child(9) {
-    border-bottom: none;
-}
-
-.board :nth-child(3),
-.board :nth-child(6) ,
-.board :nth-child(9) {
-    border-right: none;
-}
-
-.cell.x,
-.cell.circle {
-    cursor: not-allowed;
-}
-.cell.x::after,
-.cell.x::before {
-    background-color: red;
-}
-
-.board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after {
-    background-color: lightgray;
-}
-
-.cell.x::after,
-.cell.x::before, 
-.board.x .cell:not(.x):not(.circle):hover::after,
-.board.x .cell:not(.x):not(.circle):hover::before{
-    content: ' ';
-    position: absolute;
-    width: calc(var(--mark--size) * .15);
-    height: var(--mark--size);
-    /* background-color: black; */
-}
-
-
-.cell.x::after,
-.board.x .cell:not(.x):not(.circle):hover::after{
-    transform: rotate(45deg);
-}
-
-.cell.x::before,
-.board.x .cell:not(.x):not(.circle):hover::before{
-    transform: rotate(-45deg);
-}
-
-.cell.circle::after,
-.cell.circle::before,
-.board.circle .cell:not(.x):not(.circle):hover::after,
-.board.circle .cell:not(.x):not(.circle):hover::before{
-    content: ' ';
-    position: absolute;
-    border-radius: 50%;
-}
-.cell.circle::after,
-.cell.circle::before {
-    background-color: gray;
-}
-
-.board.circle .cell:not(.x):not(.circle):hover::after,
-.board.circle .cell:not(.x):not(.circle):hover::before{
-    background-color: lightgray;
-}
-
-.cell.circle::before,
-.board.circle .cell:not(.x):not(.circle):hover::before{
-    width: var(--mark--size);
-    height: var(--mark--size);
-}
-.cell.circle::after,
-.board.circle .cell:not(.x):not(.circle):hover::after
-    {
-    width: calc(var(--mark--size) * .7);
-    height: calc(var(--mark--size)* .7);
-    background-color: #222222;
-}
-
-.winning-message{
-    position:fixed;
-    display: none;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
+.main-head{
+    margin-top: 5.5%;
+    font-size: 5em;
     color: white;
-    align-items: center;
-    font-size: 5rem;
-    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
 }
 
-.winning-message button{
-    font-size: 3rem;
-    background-color: white;
-    border-radius: 1px solid balck;
-    padding: .25em .5em;
-    cursor: pointer;
-}
-.winning-message button:hover{
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-}
-
-.winning-message.show {
+nav{
+    margin-top: 1%;
     display: flex;
+    margin-left: 75%;
+}
+
+nav a{
+    font-family: 'roboto', sans-serif;
+    font-size: 1em;
+    padding: 1em;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover{
+    text-shadow: 3px 3px 2px rgb(48, 48, 48);
+    transition: text-shadow 0.3s;
+}
+
+.start-game{
+    margin-top: 4.5%;
+    border: 0px;
+    width: 220px;
+    border-radius: 2px;
+    height: 50px;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #FF4C4C;
+}
+
+.start-game:hover{
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s , box-shadow 0.3s;
+    box-shadow: #a05555 4px 3px 2px;
+}
+
+.big-dino{
+    margin-top: 1%;
+}
+
+
+
+@media all and (max-width:700px){
+    
+    nav a{
+        font-family: 'roboto', sans-serif;
+        font-size: 1em;
+        padding-top: 1em;
+        padding-left: 0em;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    nav{
+        margin-top: 1%;
+        display: flex;
+        margin-left: 52%;
+    }
+    .main-head{
+        margin-top: 30.5%;
+    }
+    .big-dino{
+        margin-top: 25%;
+    }
+}
+
+@media all and (max-width:450px){
+    .main-head{
+        margin-top: 20.5%;
+    }
+
+}
+
+@media all and (max-width:450px){
+    body{
+        overflow: hidden;
+    }
+    nav a{
+        font-family: 'roboto', sans-serif;
+        font-size: 0.9em;
+        padding-top: 1em;
+        padding-left: 0em;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .main-head{
+        margin-top: 40.5%;
+    }
+}
+
+@media all and (min-width:1439px){
+    body{
+        overflow: hidden;
+    }
+    nav a{
+        font-family: 'roboto', sans-serif;
+        font-size: 2em;
+        padding-top: 1em;
+        padding-left: 0em;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .main-head{
+        margin-top: 10.5%;
+    }
 }
